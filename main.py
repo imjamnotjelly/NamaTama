@@ -1,6 +1,8 @@
 from os import getenv
 import discord
 from PIL import Image
+from PIL import ImageFont
+from PIL import ImageDraw
 import asyncio
 from dotenv import load_dotenv
 
@@ -75,9 +77,10 @@ async def create_invite(
             embed.add_field(name=k, value=v, inline=True)
         
         await ctx.respond(embed=embed)
-    else:
+    """ else:
         ctx.respond("holup")
-        # im = Image.open("assets/banner.png")
+        img = Image.open("assets/banner.png")
+        img = ImageDraw.Draw(img) """
 
 load_dotenv()
 TOKEN = str(getenv("TOKEN"))
